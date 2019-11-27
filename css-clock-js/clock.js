@@ -20,3 +20,4 @@ console.log(seconds, minutes, hours)
     
 }
 setInterval(setDate,1000);
+
