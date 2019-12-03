@@ -73,6 +73,18 @@ console.log(totalYears)
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+    const category = document.querySelector('.mw-category');
+    const links = Array.from(category.querySelectorAll('a'));
+    const de = links
+                .map(link => link.textContent)
+                .filter(streetName => streetName.includes('de'));
+
+    const category = document.querySelector('.mw-category');
+    const links = Array.from(category.querySelectorAll('a'));
+    const de = links
+                    .map(link => link.textContent)
+                    .filter(streetName => streetName.includes('de'));
+    //  should work as it's the same in the lesson. but doesnt seem to. one is compied from git and still nothing...
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
