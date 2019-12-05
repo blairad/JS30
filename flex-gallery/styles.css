@@ -31,8 +31,11 @@ body {
     font-size: 20px;
     background-size:cover;
     background-position:center;
-    border: 1px solid red;
     flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
   }
 .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
 .panel2 { background-image:url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500); }
@@ -40,11 +43,22 @@ body {
 .panel4 { background-image:url(https://source.unsplash.com/ITjiVXcwVng/1500x1500); }
 .panel5 { background-image:url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500); }
 
+/* flex children */
 .panel > * {
     margin:0;
     width: 100%;
     transition:transform 0.5s;
+    /* border: 1px solid red; */
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+.panel > *:first-child {transform: translateY(-100%);}
+.panel.open-active > *:first-child {transform: translateY(0);}
+.panel > *:last-child{transform: translateY(100%);}
+.panel.open-active > *:last-child {transform: translateY(0);}
+
 .panel p {
     text-transform: uppercase;
     font-family: 'Amatic SC', cursive;
@@ -56,4 +70,9 @@ body {
   }
 .panel.open {
     font-size:40px;
+    flex: 5;
   }
+.cta {
+    color: white;
+    text-decoration: none;
+}
